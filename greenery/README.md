@@ -19,7 +19,7 @@ Try running the following commands:
 ### Answer
 `130`
 
-###SQL
+### SQL
 ```
 select 
     count(distinct email)   as count_of_unique_email
@@ -27,7 +27,7 @@ select
 from dev_db.dbt_danielroblesgetordermarkcom.stg_postgres_users
 ```
 
-###Output
+### Output
 ```
 +-----------------------+--------------------+
 | COUNT_OF_UNIQUE_EMAIL | COUNT_OF_ALL_EMAIL |
