@@ -14,12 +14,12 @@ Try running the following commands:
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
-### Week 1:
-* How many users do we have?
-Answer
+# Week 1:
+## How many users do we have?
+###Answer
 `130`
 
-SQL
+###SQL
 ```
 select 
     count(distinct email)   as count_of_unique_email
@@ -27,7 +27,7 @@ select
 from dev_db.dbt_danielroblesgetordermarkcom.stg_postgres_users
 ```
 
-Output
+###Output
 ```
 +-----------------------+--------------------+
 | COUNT_OF_UNIQUE_EMAIL | COUNT_OF_ALL_EMAIL |
@@ -36,11 +36,11 @@ Output
 +-----------------------+--------------------+
 ```
 
-* On average, how many orders do we receive per hour?
-Answer
+## On average, how many orders do we receive per hour?
+### Answer
 `7.680851`
 
-SQL
+### SQL
 ```
 select 
     min(created_at)             as first_order_datetime
@@ -51,7 +51,7 @@ select
 from dev_db.dbt_danielroblesgetordermarkcom.stg_postgres_orders
 ```
 
-Output
+### Output
 ```
 +-------------------------+-------------------------+---------------------+-------------------+---------------------+
 | FIRST_ORDER_DATETIME    | LAST_ORDER_DATETIME     | TOTAL_UNIQUE_ORDERS | TIME_PERIOD_HOURS | AVG_ORDERS_PER_HOUR |
@@ -59,11 +59,11 @@ Output
 | 2021-02-10 00:00:05.000 | 2021-02-11 23:55:36.000 | 361                 | 47                | 7.680851            |
 +-------------------------+-------------------------+---------------------+-------------------+---------------------+
 ```
-* On average, how long does an order take from being placed to being delivered?
-Answer
+## On average, how long does an order take from being placed to being delivered?
+### Answer
 `3.891803278689 days`
 
-SQL
+### SQL
 ```
 select 
     avg(time_to_delivery_seconds) as avg_time_to_delivery_seconds
@@ -79,7 +79,7 @@ from
 )
 ```
 
-Output
+### Output
 ```
 +------------------------------+---------------------------+
 | AVG_TIME_TO_DELIVERY_SECONDS | AVG_TIME_TO_DELIVERY_DAYS |
@@ -87,11 +87,11 @@ Output
 | 336,251.803279               | 3.891803278689            |
 +------------------------------+---------------------------+
 ```
-* How many users have only made one purchase? Two purchases? Three+ purchases?
-Answer
+## How many users have only made one purchase? Two purchases? Three+ purchases?
+### Answer
 `see output`
 
-SQL
+### SQL
 ```
 select 
     total_orders
@@ -112,8 +112,8 @@ order by
     total_orders
 ```
 
-Output
-`+--------------+-------------------------+
+### Output
+```+--------------+-------------------------+
 | TOTAL_ORDERS | COUNT(DISTINCT USER_ID) |
 +--------------+-------------------------+
 | 1            | 25                      |
@@ -131,21 +131,21 @@ Output
 | 7            | 4                       |
 +--------------+-------------------------+
 | 8            | 1                       |
-+--------------+-------------------------+``
++--------------+-------------------------+
 ```
 
-* On average, how many unique sessions do we have per hour?
-Answer
-``
+## On average, how many unique sessions do we have per hour?
+### Answer
+`24.083333`
 
-SQL
+### SQL
 ```
 select 
     count(distinct session_id)/24 as avg_sessions_per_hour
 from dev_db.dbt_danielroblesgetordermarkcom.stg_postgres_events
 ```
 
-Output
+### Output
 ```
 +-----------------------+
 | AVG_SESSIONS_PER_HOUR |
