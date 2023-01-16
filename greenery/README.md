@@ -16,7 +16,7 @@ Try running the following commands:
 
 # Week 1:
 ## How many users do we have?
-###Answer
+### Answer
 `130`
 
 ###SQL
