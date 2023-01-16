@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_postgres_addresses
+    description: Contains the address of a user 
+
+  - name: stg_postgres_users
+    description: Contains user profile information and meta data
+
+  - name: stg_postgres_events
+    description: contains website event data at the user/session/event/page level
+
+  - name: stg_postgres_orders
+    description: Contains order level information pertaining to a user's order
+
+  - name: stg_postgres_products
+    description: Contains product meta data
+
+  - name: stg_postgres_order_items
+    description: Contains the product_id and quantity for each order_id
+
+  - name: stg_postgres_promos
+    description: Contains details about the promotion applied to an order
